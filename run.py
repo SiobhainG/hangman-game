@@ -30,6 +30,17 @@ Function that will show blanks for each letter in randomised words
 def show_blanks(word):
     return["_" for letter in word]
 
+
+
+"""
+Function that asks user to input a letter
+"""
+
+def user_choice():
+    input("Please enter a letter in lowercase")
+
+
+
 """
 Main function that runs the game
 """
@@ -40,6 +51,7 @@ def play_game():
     word = chooseWord(words)
     needed_letters = show_blanks(word)
     print(needed_letters)
+    user_choice()
 
 
 play_game()
