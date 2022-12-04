@@ -21,7 +21,14 @@ Function that randomises a word from the list in words.py
 def chooseWord(words):
     word = random.choice(words)
     return word
-    
+
+
+"""
+Function that will show blanks for each letter in randomised words
+"""
+
+def show_blanks(word):
+    return["_" for letter in word]
 
 """
 Main function that runs the game
@@ -31,5 +38,8 @@ Main function that runs the game
 def play_game():
     game_intro()
     word = chooseWord(words)
-    
+    needed_letters = show_blanks(word)
+    print(needed_letters)
+
+
 play_game()
