@@ -50,8 +50,8 @@ def play_game():
     game_intro()
     word = chooseWord(words)
     needed_letters = show_blanks(word)
+    guessed_letters = set()
+    remaining_letters = len(needed_letters)
     print(needed_letters)
-    user_choice()
-
-
+   
 play_game()
