@@ -32,8 +32,7 @@ Function that will show blanks for each letter in randomised words
 
 
 def show_blanks(word):
-    return["_" for letter in word]
-
+    return ["_" for letter in word]
 
 
 """
@@ -47,10 +46,8 @@ def user_choice():
     if user_letter in all_letters:
         return user_letter
     else:
-        print("Oops, you chose incorrectly!")
+        print("Oops, letters only!")
     
-
-
 
 """
 Main function that runs the game
@@ -63,8 +60,19 @@ def play_game():
     needed_letters = show_blanks(word)
     guessed_letters = set()
     remaining_letters = len(needed_letters)
+    attempts = 7
+
     print(needed_letters)
-    user_choice()
-   
+
+    user_letter = user_choice()
+
+    if user_letter in word:
+        guessed_letters.add(user_letter)
+        if user_letter in needed_letters:
+            remaining_letters.remove(user_letter)
+        else:
+            attempts = attempts - 1
+            print("Wrong answer, you have", attempts, "attempts left")
+
 
 play_game()
