@@ -6,6 +6,7 @@ import string
 Function that describes the game to the user
 """
 
+
 def game_intro():
     print("\nHow to play:")
     print("\nGuess one letter at a time")
@@ -14,9 +15,11 @@ def game_intro():
     print("\nYou have seven chances to guess the word")
     print("\nMake sure to choose wisely")
 
+
 """
 Function that randomises a word from the list in words.py
 """
+
 
 def chooseWord(words):
     word = random.choice(words)
@@ -27,6 +30,7 @@ def chooseWord(words):
 Function that will show blanks for each letter in randomised words
 """
 
+
 def show_blanks(word):
     return["_" for letter in word]
 
@@ -36,8 +40,15 @@ def show_blanks(word):
 Function that asks user to input a letter
 """
 
+
 def user_choice():
-    input("Please enter a letter in lowercase")
+    all_letters = set(string.ascii_letters)
+    user_letter = input("Please enter a letter")
+    if user_letter in all_letters:
+        return user_letter
+    else:
+        print("Oops, you chose incorrectly!")
+    
 
 
 
@@ -53,5 +64,7 @@ def play_game():
     guessed_letters = set()
     remaining_letters = len(needed_letters)
     print(needed_letters)
+    user_choice()
    
+
 play_game()
