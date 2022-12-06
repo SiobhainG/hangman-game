@@ -7,7 +7,7 @@ Function that describes the game to the user
 """
 
 
-def game_intro():
+def game_instructions():
     print("\nHow to play:")
     print("\nGuess one letter at a time")
     print("\nBe careful, there are consequences when you are incorrect")
