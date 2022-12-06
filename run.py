@@ -55,7 +55,6 @@ Main function that runs the game
 
 
 def play_game():
-    game_intro()
     word = chooseWord(words)
     needed_letters = show_blanks(word)
     guessed_letters = set()
@@ -75,4 +74,20 @@ def play_game():
             print("Wrong answer, you have", attempts, "attempts left")
 
 
-play_game()
+def game_intro():
+    global user_name
+    print("Welcome to HangMan!")
+    user_name = input("Please enter your name: ")
+    print("Welcome,", user_name, "Would you like to play?")
+    choice = input("Y or N?")
+    while choice not in ["y", "n","Y","N"]:
+        print("Please choose Y or N only")
+    if choice in ["Y", "y"]:
+        game_instructions()
+    elif choice in ["N", "n"]:
+        print("No worries, bye!")
+        quit()
+
+    
+
+game_intro()
