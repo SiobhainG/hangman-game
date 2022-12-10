@@ -43,11 +43,12 @@ Function that asks user to input a letter
 def user_choice():
     all_letters = set(string.ascii_letters)
     user_letter = input("Please enter a letter: ")
-    if user_letter in all_letters:
-        return user_letter
+    while len(user_letter) > 1 or user_letter not in all_letters:
+        print("Single letters only please!")
+        break
     else:
-        print("Oops, letters only!")
-    
+        return user_letter
+
 
 """
 Main function that runs the game
