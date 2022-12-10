@@ -75,6 +75,11 @@ def play_game():
             print("Wrong answer, you have", attempts, "attempts left")
 
 
+"""
+Asks the user for their name & asks if they want to play.
+"""
+
+
 def game_intro():
     global user_name
     print("Welcome to...")
