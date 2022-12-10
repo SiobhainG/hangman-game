@@ -42,7 +42,7 @@ Function that asks user to input a letter
 
 def user_choice():
     all_letters = set(string.ascii_letters)
-    user_letter = input("Please enter a letter")
+    user_letter = input("Please enter a letter: ")
     if user_letter in all_letters:
         return user_letter
     else:
@@ -76,18 +76,27 @@ def play_game():
 
 def game_intro():
     global user_name
-    print("Welcome to HangMan!")
+    print("Welcome to...")
+    print("""                                          
+| |                                            
+| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
+| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+| | | | (_| | | | | (_| | | | | | | (_| | | | |
+|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                    __/ |                      
+                   |___/""")
     user_name = input("Please enter your name: ")
-    print("Welcome,", user_name, "Would you like to play?")
+    print("Welcome,", user_name, "Would you like to play?: ")
     choice = input("Y or N?")
-    while choice not in ["y", "n","Y","N"]:
+    while choice not in ["y", "n", "Y", "N"]:
         print("Please choose Y or N only")
     if choice in ["Y", "y"]:
+        print("Thank you,", user_name, "the game will now begin..")
         game_instructions()
+        play_game()
     elif choice in ["N", "n"]:
         print("No worries, bye!")
         quit()
 
     
-
 game_intro()
