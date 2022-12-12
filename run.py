@@ -9,11 +9,10 @@ Function that describes the game to the user
 
 def game_instructions():
     print("----------------------------------------")
-    print("\nHow to play:")
-    print("\nGuess one letter at a time")
-    print("\nBe careful, there are consequences when you are incorrect")
-    print("\nOne incorrect guess means one step closer to being hanged")
-    print("\nYou have seven chances to guess the word")
+    print("\nGuess one letter (between A-Z)")
+    print("\nBe careful!")
+    print("\nOne wrong guess = one step closer to being hanged")
+    print("\nYou have 7 chances to guess a letter in the word")
     print("\nMake sure to choose wisely")
     print("----------------------------------------")
 
@@ -37,7 +36,7 @@ def user_choice():
     all_letters = set(string.ascii_letters)
     user_letter = input("Please enter a letter: ")
     while len(user_letter) > 1 or user_letter not in all_letters:
-        print("Single letters only please!")
+        print("A-Z only please!")
         break
     else:
         return user_letter
@@ -101,7 +100,7 @@ def game_intro():
                     |___/""")
         user_name = input("Please enter your name: ")
         if user_name.isalpha():
-            print("Welcome,", user_name, "Would you like to play?: ")
+            print("Welcome", user_name, "! Would you like to play?: ")
             choice = input("Y or N?: ")
             while choice not in ["y", "n", "Y", "N"]:
                 print("Please choose Y or N only")
