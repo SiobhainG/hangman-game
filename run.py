@@ -56,23 +56,26 @@ Main function that runs the game
 
 
 def play_game():
+    game_instructions()
     word = chooseWord(words)
     needed_letters = show_blanks(word)
-    guessed_letters = set()
-    remaining_letters = len(needed_letters)
+    guessed_letters = []
+
     attempts = 7
 
-    print(needed_letters)
+    while attempts > 0 and len(needed_letters) > 0:
+        print("Your word is: ")
+        print(needed_letters)
+        print("------------------")
+        print("Attempts: ", attempts)
+        print("You have guessed: ", guessed_letters)
 
-    user_letter = user_choice()
+        user_letter = user_choice()
+        if user_letter in word:
+            guessed_letters.append(user_letter)
+            print(guessed_letters)
 
-    if user_letter in word:
-        guessed_letters.add(user_letter)
-        if user_letter in needed_letters:
-            remaining_letters.remove(user_letter)
-        else:
-            attempts = attempts - 1
-            print("Wrong answer, you have", attempts, "attempts left")
+    
 
 
 """
@@ -98,7 +101,6 @@ def game_intro():
         print("Please choose Y or N only")
     if choice in ["Y", "y"]:
         print("Thank you,", user_name, "the game will now begin..")
-        game_instructions()
         play_game()
     elif choice in ["N", "n"]:
         print("No worries, bye!")
