@@ -56,24 +56,28 @@ def play_game():
     attempts = 7
 
     while attempts > 0 and gameOver is False:
-        print("You have guessed", guessed_letters)
+        print("You have guessed: ", guessed_letters)
         print(needed_letters)
+        print("You have", attempts, "attempts left")
+        
         user_guess = user_choice()
         if user_guess in guessed_letters:
             print("You have already guessed this letter")
         elif user_guess not in word:
+            print("Oops,", user_guess, "is not in the word!")
             guessed_letters.append(user_guess)
             attempts -= 1
         else:
             print("Well done, that is in the word")
-            
+            guessed_letters.append(user_guess)
+            needed_letters = list(needed_letters)
+            for i, char in enumerate(word):
+                if char == user_guess:
+                    needed_letters[i] = user_guess
+                    print(''.join(needed_letters))
 
+                    
 
-
-
-        
-
-    
 
 
 """
@@ -109,4 +113,4 @@ def game_intro():
             print("Please enter your name in letters only")
 
     
-game_intro()
+play_game()
