@@ -75,27 +75,31 @@ Asks the user for their name & asks if they want to play.
 
 
 def game_intro():
-    global user_name
-    print("Welcome to...")
-    print("""                                          
-| |                                            
-| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
-| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
-| | | | (_| | | | | (_| | | | | | | (_| | | | |
-|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
-                    __/ |                      
-                   |___/""")
-    user_name = input("Please enter your name: ")
-    print("Welcome,", user_name, "Would you like to play?: ")
-    choice = input("Y or N?")
-    while choice not in ["y", "n", "Y", "N"]:
-        print("Please choose Y or N only")
-    if choice in ["Y", "y"]:
-        print("Thank you,", user_name, "the game will now begin..")
-        play_game()
-    elif choice in ["N", "n"]:
-        print("No worries, bye!")
-        quit()
+    while True:
+        global user_name
+        print("Welcome to...")
+        print("""                                          
+    | |                                            
+    | |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
+    | '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+    | | | | (_| | | | | (_| | | | | | | (_| | | | |
+    |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                        __/ |                      
+                    |___/""")
+        user_name = input("Please enter your name: ")
+        if user_name.isalpha():
+            print("Welcome,", user_name, "Would you like to play?: ")
+            choice = input("Y or N?")
+            while choice not in ["y", "n", "Y", "N"]:
+                print("Please choose Y or N only")
+            if choice in ["Y", "y"]:
+                print("Thank you,", user_name, "the game will now begin..")
+                play_game()
+            elif choice in ["N", "n"]:
+                print("No worries, bye!")
+                quit()
+        else:
+            print("Please enter your name in letters only")
 
     
 game_intro()
