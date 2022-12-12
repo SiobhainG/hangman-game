@@ -27,15 +27,6 @@ def chooseWord(words):
 
 
 """
-Function that will show blanks for each letter in randomised words
-"""
-
-
-def show_blanks(word):
-    return ["_" for letter in word]
-
-
-"""
 Function that asks user to input a letter
 """
 
@@ -58,7 +49,7 @@ Main function that runs the game
 def play_game():
     game_instructions()
     word = chooseWord(words)
-    needed_letters = show_blanks(word)
+    needed_letters = len(word) * ['_']
     guessed_letters = []
 
     attempts = 7
