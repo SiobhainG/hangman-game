@@ -51,20 +51,27 @@ def play_game():
     word = chooseWord(words)
     needed_letters = len(word) * ['_']
     guessed_letters = []
+    gameOver = False
 
     attempts = 7
 
-    while attempts > 0 and len(needed_letters) > 0:
-        print("Your word is: ")
+    while attempts > 0 and gameOver is False:
+        print("You have guessed", guessed_letters)
         print(needed_letters)
-        print("------------------")
-        print("Attempts: ", attempts)
-        print("You have guessed: ", guessed_letters)
+        user_guess = user_choice()
+        if user_guess in guessed_letters:
+            print("You have already guessed this letter")
+        elif user_guess not in word:
+            guessed_letters.append(user_guess)
+            attempts -= 1
+        else:
+            print("Well done, that is in the word")
+            
 
-        user_letter = user_choice()
-        if user_letter in word:
-            guessed_letters.append(user_letter)
-            print(guessed_letters)
+
+
+
+        
 
     
 
