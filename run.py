@@ -116,11 +116,11 @@ def play_game():
     word = chooseWord(words)
     needed_letters = len(word) * ['_']
     guessed_letters = []
-    gameOver = False
+    game_over = False
 
     attempts = 7
 
-    while gameOver is False:
+    while game_over is False:
         print("Your word has", len(needed_letters), "letters")
         print()
         print("You have guessed: ", guessed_letters)
@@ -146,8 +146,10 @@ def play_game():
                 if char == user_guess:
                     needed_letters[i] = user_guess
                     print(''.join(needed_letters))
+        game_over = attempts == 0
+    if game_over:
+        print("You lost!")
 
-                    
 """
 Asks the user for their name & asks if they want to play.
 """
