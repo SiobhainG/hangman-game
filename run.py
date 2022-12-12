@@ -8,12 +8,14 @@ Function that describes the game to the user
 
 
 def game_instructions():
+    print("----------------------------------------")
     print("\nHow to play:")
     print("\nGuess one letter at a time")
     print("\nBe careful, there are consequences when you are incorrect")
     print("\nOne incorrect guess means one step closer to being hanged")
     print("\nYou have seven chances to guess the word")
     print("\nMake sure to choose wisely")
+    print("----------------------------------------")
 
 
 """
@@ -56,9 +58,12 @@ def play_game():
     attempts = 7
 
     while attempts > 0 and gameOver is False:
+        print("Your word has", len(needed_letters), "letters")
+        print()
         print("You have guessed: ", guessed_letters)
-        print(needed_letters)
+        print()
         print("You have", attempts, "attempts left")
+        print("----------------------------------------")
         
         user_guess = user_choice()
         if user_guess in guessed_letters:
@@ -68,7 +73,7 @@ def play_game():
             guessed_letters.append(user_guess)
             attempts -= 1
         else:
-            print("Well done, that is in the word")
+            print("Well done,", user_guess, "is in the word")
             guessed_letters.append(user_guess)
             needed_letters = list(needed_letters)
             for i, char in enumerate(word):
@@ -77,9 +82,6 @@ def play_game():
                     print(''.join(needed_letters))
 
                     
-
-
-
 """
 Asks the user for their name & asks if they want to play.
 """
@@ -100,11 +102,11 @@ def game_intro():
         user_name = input("Please enter your name: ")
         if user_name.isalpha():
             print("Welcome,", user_name, "Would you like to play?: ")
-            choice = input("Y or N?")
+            choice = input("Y or N?: ")
             while choice not in ["y", "n", "Y", "N"]:
                 print("Please choose Y or N only")
             if choice in ["Y", "y"]:
-                print("Thank you,", user_name, "the game will now begin..")
+                print("Thank you,", user_name, ", the game will now begin..")
                 play_game()
             elif choice in ["N", "n"]:
                 print("No worries, bye!")
@@ -113,4 +115,4 @@ def game_intro():
             print("Please enter your name in letters only")
 
     
-play_game()
+game_intro()
