@@ -43,6 +43,70 @@ def user_choice():
 
 
 """
+Displays the current stage of HangMan dependning on the attempts
+"""
+
+
+def gallows(attempts):
+    if attempts == 7:
+        print("________      ")
+        print("|      |      ")
+        print("|             ")
+        print("|             ")
+        print("|             ")
+        print("|             ")
+        print("|________")
+    if attempts == 6:
+        print("________      ")
+        print("|      |      ")
+        print("|     (_)      ")
+        print("|             ")
+        print("|             ")
+        print("|             ")
+        print("|________")
+    if attempts == 5:
+        print("________      ")
+        print("|      |      ")
+        print("|     (_)      ")
+        print("|     /       ")
+        print("|             ")
+        print("|             ")
+        print("|________")
+    if attempts == 4:
+        print("________      ")
+        print("|      |      ")
+        print("|     (_)      ")
+        print("|     / \     ")
+        print("|             ")
+        print("|             ")
+        print("|________")
+    if attempts == 3:
+        print("________      ")
+        print("|      |      ")
+        print("|     (_)      ")
+        print("|     /|\     ")
+        print("|             ")
+        print("|             ")
+        print("|________")
+    if attempts == 2:
+        print("________      ")
+        print("|      |      ")
+        print("|     (_)      ")
+        print("|     /|\     ")
+        print("|     /       ")
+        print("|             ")
+        print("|________")
+    if attempts == 1:
+        print("________      ")
+        print("|      |      ")
+        print("|     (_)      ")
+        print("|     /|\     ")
+        print("|      /\     ")
+        print("|             ")
+        print("|________")
+        
+
+"""
 Main function that runs the game
 """
 
@@ -56,10 +120,12 @@ def play_game():
 
     attempts = 7
 
-    while attempts > 0 and gameOver is False:
+    while gameOver is False:
         print("Your word has", len(needed_letters), "letters")
         print()
         print("You have guessed: ", guessed_letters)
+        print()
+        gallows(attempts)
         print()
         print("You have", attempts, "attempts left")
         print("----------------------------------------")
@@ -115,4 +181,4 @@ def game_intro():
             print("Please enter your name in letters only")
 
     
-game_intro()
+play_game()
