@@ -67,6 +67,7 @@ def play_game():
         user_guess = user_choice()
         if user_guess in guessed_letters:
             print("You have already guessed this letter")
+            attempts -= 1
         elif user_guess not in word:
             print("Oops,", user_guess, "is not in the word!")
             guessed_letters.append(user_guess)
