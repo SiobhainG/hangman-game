@@ -3,6 +3,22 @@ from words import words
 import string
 
 """
+Function that asks the user if they
+want to play again when game ends
+"""
+
+
+def play_again():
+    play_again = input("Would you like to play again? Y or N:")
+    if play_again in ["Y", "y"]:
+        print("Thank you,", user_name, ", the game will now begin again..")
+        play_game()
+    elif play_again in ["N", "n"]:
+        print("No worries, thanks for playing, bye!")
+        quit()
+
+
+"""
 Function that describes the game to the user
 """
 
@@ -150,12 +166,12 @@ def play_game():
         game_over = attempts == 0
         game_win = "_" not in needed_letters
 
-        if game_over:
+        if (game_over):
             print("You lost! The word was:", word)
-            quit()
-        elif game_win:
+            play_again()
+        elif (game_win):
             print("You won!")
-            quit()
+            play_again()
 
 
 """
