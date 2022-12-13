@@ -101,7 +101,7 @@ def gallows(attempts):
         print("|      |      ")
         print("|     (_)      ")
         print("|     /|\     ")
-        print("|      /\     ")
+        print("|     / \     ")
         print("|             ")
         print("|________")
         
@@ -149,6 +149,7 @@ def play_game():
         game_over = attempts == 0
     if game_over:
         print("You lost!")
+
 
 """
 Asks the user for their name & asks if they want to play.
