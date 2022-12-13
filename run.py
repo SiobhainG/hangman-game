@@ -146,9 +146,16 @@ def play_game():
                 if char == user_guess:
                     needed_letters[i] = user_guess
                     print(' '.join(needed_letters))
+
         game_over = attempts == 0
-    if game_over:
-        print("You lost!")
+        game_win = "_" not in needed_letters
+
+        if game_over:
+            print("You lost! The word was:", word)
+            quit()
+        elif game_win:
+            print("You won!")
+            quit()
 
 
 """
