@@ -184,4 +184,4 @@ def game_intro():
             print("Please enter your name in letters only")
 
     
-play_game()
+game_intro()
