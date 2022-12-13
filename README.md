@@ -1,31 +1,33 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# HangMan Game
+[Link to App](https://hangman-pp3-sg.herokuapp.com/)
+[Link to Github Repo](https://github.com/SiobhainG/hangman-game)
 
-Welcome SiobhainG,
+This game was designed to provide the user with a chance to play the classic game of HangMan.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+![Am I Responsive Image](/assets/images/hangmanamiresponsive.PNG)
 
-## Reminders
+## Structure
+- The game offers clear and concise instructions to the user.
+- The below Flowchart was created to represent the logic of the game.
+![Flowchart](/assets/images/python.jpeg)
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+## Features
+- ### Game Introduction
+    - The game begins with a HangMan graphic and asks the user to enter their name.
+![Game Intro Image](/assets/images/gameinto.PNG)
+    - The game will then ask the user if they would like to play the game.
+![Yes/No Image](/assets/images/playyesno.PNG)
+    - If the user answers yes, the game will begin. If they answer no it will exit out of the application.
+- ### Game Instructions
+    - The user is provided with some simple instructions on how to complete the game.
+    - The user is shown the length of the word, already guessed letters, the gallows graphic and the number of attempts remaining.
+    - The user is asked to enter a letter.
+![Main Game Image](/assets/images/maingame.PNG)
+- ### Correct Letter Entered
+    - If the user enters a correct letter, they will be told it is in the word and shown remaining blanks around that letter.
+![Correct Letter Image](/assets/images/correctletter.PNG)
+- ### Incorrect Letter Guessed
+    - The user will be told their letter is not in the word and the gallows will be updated and remaining attempts will be reduced.
+![Incorrect Letter Image](/assets/images/incorrectletter.PNG)
 
-## Creating the Heroku app
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
