@@ -145,7 +145,7 @@ def play_game():
             for i, char in enumerate(word):
                 if char == user_guess:
                     needed_letters[i] = user_guess
-                    print(''.join(needed_letters))
+                    print(' '.join(needed_letters))
         game_over = attempts == 0
     if game_over:
         print("You lost!")
