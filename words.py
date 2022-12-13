@@ -1,1 +1,1 @@
-words = ['penguin', 'football', 'ireland', 'special', 'affordable', 'magical', 'important', 'exercise', 'retaurant', 'hallway', 'garbage', 'paparazzi', 'giraffe', 'helpful', 'dragon', 'zombie', 'homework', 'daytime', 'wifi', 'snapchat', 'instagram', 'formula', 'excellent', 'xylophone']
+words = ['penguin', 'ireland', 'special', 'magical', 'exercise', 'hallway', 'garbage', 'giraffe', 'helpful', 'dragon', 'zombie', 'daytime', 'wifi', 'instagram', 'formula', 'excellent']
